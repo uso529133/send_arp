@@ -1,12 +1,12 @@
 all : send_arp
 
 send_arp: main.o
-	@g++ -g -w -o send_arp main.o -lpcap
+	g++ -g -w -o send_arp main.o -lpcap
 
 main.o:
-	@g++ -g -w -c -o main.o main.cpp
+	g++ -g -w -c -o main.o main.cpp
 
 clean:
-	@rm -f send_arp
-	@rm -f *.o
+	rm -f send_arp
+	rm -f *.o
 

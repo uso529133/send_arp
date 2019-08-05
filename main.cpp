@@ -1,12 +1,8 @@
 #include <pcap.h>
 #include <arpa/inet.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
 #include <sys/ioctl.h>
-#include <netinet/in.h>
 #include <net/if.h>
 #include <unistd.h>
 
@@ -15,9 +11,9 @@
 #define PACKET_LEN 42
 #define TYPE_ARP 0x0806
 #define TYPE_IPV4 0x0800
-#define HARDWARE_TYPE 1
-#define HARDWARE_SIZE 6
-#define PROTOCOL_SIZE 4
+#define HARDWARE_TYPE 0x01
+#define HARDWARE_SIZE 0x06
+#define PROTOCOL_SIZE 0x04
 
 u_char buf[PACKET_LEN];
 pcap_t* handle;
